@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: blog-db
+    image: postgres:14.3-alpine3.15
+    environment:
+      POSTGRES_USER: swiftlet
+      POSTGRES_PASSWORD: swiftlet5650
+      POSTGRES_DB: blog_development
+    ports:
+      - 5432:5432
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4:6.9
+    environment:
+      PGADMIN_DEFAULT_EMAIL: test@example.com
+      PGADMIN_DEFAULT_PASSWORD: swiftlet5650
+    ports:
+      - 8080:80
+
+  
